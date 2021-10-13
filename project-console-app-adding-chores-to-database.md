@@ -1,4 +1,4 @@
-#  Chore Console Application 
+#  Project: Chore Console Application 
 
 ## Summary
 Build a console application that stores chores in a SQL database.
