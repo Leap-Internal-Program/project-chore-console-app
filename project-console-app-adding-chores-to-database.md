@@ -1,7 +1,7 @@
 #  Chore Console Application 
 
 ## Summary
-Build a console application that stores chores in SQL database.
+Build a console application that stores chores in a SQL database.
 
 ## Estimated time
 Estimated time is five to seven hours.
@@ -20,33 +20,34 @@ You are building a console application that allows users to store chores in a da
 | Project objectives |
 | :-- |
 | Demonstrate learning through following an example of another project |
-| Deomnostrate 
+| Demonstrate working with a database in a C# console application|
 
 | Minimum Viable Product Requirements |
 | :-- |
-| When the application runs, create a new database after dropping a previous database with the same name. (You choose the name of the database).   |
-| When the application runs, a new table should be created with three columns: 1) ChoreId 2) ChoreName 3) ChoreAssigment (Best to ))|
+| When the application runs, create a new database after dropping a previous database with the same name if needed. (You choose the name of the database).   |
+| When the application runs, a new table should be created with three columns: 1) ChoreId 2) ChoreName 3) ChoreAssigment |
 | When the application runs, three new chores should should be inserted into the database. |
 | When the application runs, a chore should be updated |
 | When the application runs, a chore should be deleted |
 | When the application runs, all chores should be displayed |
-| The programming functionality should not live in the Main method. |
+| The programming functionality should not live in the Main method. Attempt to break to code into methods|
 
 | (Optional) Additional Features |
 | --- |
-| Create a console application that allows the user to add, list, and update chores through input in the console. |
+| Create a console application that allows the user to add, list, and update chores through input in the console. *I.e I can select "Add chore" from a list, type in a chore name and chore assignment.  Then I can print a list of chores to the console.* |
 
-*Recommended* table schema
+### *Recommended* table 
+
 #### Chores
 | Type |Column Name| Notes |
 | --- | --- | --- |
-| INTIGER | ChoreId | PK (AUTO INCREMENT, UNIQUE) |
+| INTEGER | ChoreId | PK (AUTO INCREMENT, UNIQUE) |
 | NVARCHAR(MAX)| ChoreName |  |
 | NVARChAR(MAX)| ChoreAssignment |  |
 
 
 #### Example class that would store functionality.
-The below class is only an example as there are multiple ways to build this project.  `AddChore()` return type is `int` becuase this method chooses to return the number of rows updated. 
+The below class is an example.  There are multiple ways to build this project and you may not be aware of the best practices.  `AddChore()` return type is `int` because this method chooses to return the number of rows updated. 
 |  Data Access |
 | --- | 
 | - connectionSring: string  |
@@ -136,15 +137,14 @@ public List<string> GetChores()
 ```
 
 ## Recommendations
-- The recommend starting point is to first write the SQL statements. Start by writing the create database col SQL Server Management Studio.  Save all the queries you write. After you have correctly built all your queries, then start the console app application. 
+- The recommend starting point is to first write the SQL statements. Start by writing the create database statement in SQL Server Management Studio.  Next write the create table query in SSMS.  Save all the queries you write. After you have correctly built all your queries, then start the console app application. 
 
-- Expect to have trouble non-coding issues with this project.  Expect authentication errors and problems connecting to the database initially.  Quickly reach out to the class if you are unable to diagnose your issue. 
-
-  - Make sure you are using try catch and reading any SQL exeptions thrown.
+- Expect authentication errors and problems connecting to the database initially.  Quickly reach out to the class if you are unable to diagnose your issue. 
+  - Make sure you are using try / catch and look at SQL exceptions.
 
 - Common errors I see include:
   - Forgetting to open the connection
-  - Not selecting the database before running certain statements.
-  - 
+  - Not selecting the database before running certain statements
+  - Not creating a valid connection string
 
 
